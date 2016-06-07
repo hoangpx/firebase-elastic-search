@@ -1,0 +1,1 @@
+# firebase-elastic-search
