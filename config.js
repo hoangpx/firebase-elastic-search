@@ -8,13 +8,13 @@
 
 /** Firebase Settings
  ***************************************************/
-process.env.FB_NAME = 'neighborstool';
+// process.env.FB_NAME = 'neighborstool';
 // Your Firebase instance where we will listen and write search results
 exports.FB_URL   = 'https://' + process.env.FB_NAME + '.firebaseio.com/';
 
 // Either your Firebase secret or a token you create with no expiry, used to authenticate
 // To Firebase and access search data.
-process.env.FB_TOKEN = 'AIzaSyDHcvAWid8PMPeVRFKpnvixbtZJr9sDJ0I'
+// process.env.FB_TOKEN = 'AIzaSyDHcvAWid8PMPeVRFKpnvixbtZJr9sDJ0I'
 exports.FB_TOKEN = process.env.FB_TOKEN || null;
 
 // The path in your Firebase where clients will write search requests
@@ -35,10 +35,10 @@ else {
 
    // ElasticSearch server's host port
    exports.ES_PORT  = process.env.ES_PORT || '9200';
-	process.env.ES_USER = 'me@hoangpx.com'
+// 	process.env.ES_USER = 'me@hoangpx.com'
    // ElasticSearch username for http auth
    exports.ES_USER  = process.env.ES_USER || null;
-	process.env.ES_PASS = 'qqqqqq'
+// 	process.env.ES_PASS = 'qqqqqq'
    // ElasticSearch password for http auth
    exports.ES_PASS  = process.env.ES_PASS || null;
 }
