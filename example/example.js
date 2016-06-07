@@ -6,7 +6,7 @@
    /**====== SET ME =====**/
    /**====== SET ME =====**/
    /**====== SET ME =====**/
-   var URL = 'https://INSTANCE.firebaseio.com';
+   var URL = 'https://neighborstool.firebaseio.com/';
 
    // handle form submits
    $('form').on('submit', function(e) {
@@ -24,8 +24,8 @@
 
    // display search results
    function doSearch(index, type, query) {
-      var ref = new Firebase(URL+'/search');
-      var key = ref.child('request').push({ index: index, type: type, query: query }).key();
+      var ref = firebase.database().ref('search');
+      var key = ref.child('request').push({ index: index, type: type, query: query }).key;
       console.log('search', key, { index: index, type: type, query: query });
       ref.child('response/'+key).on('value', showResults);
    }
@@ -34,8 +34,8 @@
       if( snap.val() === null ) { return; } // wait until we get data
       var dat = snap.val();
 //      console.log('result', snap.name(), snap.val());
-      snap.ref().off('value', showResults);
-      snap.ref().remove();
+      snap.ref.off('value', showResults);
+      snap.ref.remove();
       var $pair = $('#results')
          .text(JSON.stringify(dat, null, 2))
          .add( $('#total').text(dat.total) )
@@ -65,7 +65,8 @@
    }
 
    // display raw data for reference
-   new Firebase(URL).on('value', setRawData);
+   var ref = firebase.database().ref();
+   ref.on('value', setRawData);
    function setRawData(snap) {
       $('#raw').text(JSON.stringify(snap.val(), null, 2));
    }
