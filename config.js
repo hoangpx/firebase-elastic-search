@@ -68,7 +68,7 @@ exports.paths = [
       type:  "user"
    },
    {
-      path:  "users/posts",
+      path:  "users",
       index: "firebase",
       type:  "post",
       fields: ['title', 'desc'],
