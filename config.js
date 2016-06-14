@@ -68,10 +68,10 @@ exports.paths = [
       type:  "user"
    },
    {
-      path:  "messages",
+      path:  "users",
       index: "firebase",
-      type:  "message",
-      fields: ['msg', 'name'],
+      type:  "posts",
+      fields: ['title', 'desc'],
       filter: function(data) { return data.name !== 'system'; }
    }
 ];
