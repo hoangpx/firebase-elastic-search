@@ -64,7 +64,7 @@ else {
 exports.paths = [
 
    {
-      path:  "users/posts",
+      path:  "posts",
       index: "firebase",
       type:  "post",
       fields: ['title', 'desc'],
