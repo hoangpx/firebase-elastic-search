@@ -24,7 +24,7 @@
 
    // display search results
    function doSearch(index, type, query) {
-      var ref = firebase.database().ref('search');
+      var ref = firebase.database().ref('queryTemplate/search');
       alert(index + '/' + type)
       var key = ref.child('request').push({ index: index, type: type, query: query }).key;
       console.log('search', key, { index: index, type: type, query: query });
