@@ -67,7 +67,6 @@ exports.paths = [
       path:  "posts",
       index: "firebase",
       type:  "post",
-      fields: ['title', 'desc'],
       filter: function(data) { return data.name !== 'system'; }
    }
 ];
